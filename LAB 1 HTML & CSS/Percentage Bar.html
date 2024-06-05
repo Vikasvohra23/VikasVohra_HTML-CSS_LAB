@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bar Plot</title>
+    <style>
+        /* Base styling for the page */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        /* Container for the bars */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 300px;
+            width: 300px;
+            background-color: #d0d0d0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        /* Container for each individual bar */
+        .bar-container {
+            margin: 0 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        /* Styling for the bars */
+        .bar {
+            width: 50px;
+            height: 200px; /* Height of the bars */
+            background-color: #a0a0a0; /* Background color of the bars */
+            position: relative;
+            overflow: hidden;
+        }
+        /* Styling for the fill of the bars */
+        .fill {
+            width: 100%;
+            background-color: #707070; /* Color of the fill */
+            position: absolute;
+            bottom: 0;
+            /* Animation definition for the fill */
+            animation: fillAnimation 1s forwards;
+        }
+        /* Styling for the white rectangles on top of the bars */
+        .white-rect {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background-color: white;
+            pointer-events: none;
+        }
+        /* Styling for the title */
+        h1 {
+            margin-top: 20px;
+            text-align: center;
+        }
+        /* Keyframes for the fill animation */
+        @keyframes fillAnimation {
+            from { height: 0; } /* Starting height of the fill */
+            to { height: var(--fill-height); } /* Final height of the fill */
+        }
+    </style>
+</head>
+<body>
+    <!-- Container for the bars -->
+    <div class="container">
+        <!-- Each individual bar -->
+        <div class="bar-container">
+            <!-- Bar with fill and white rectangle -->
+            <div class="bar">
+                <!-- Fill of the bar -->
+                <div class="fill" style="--fill-height: 30%;"></div>
+                <!-- White rectangle on top of the fill -->
+                <div class="white-rect" style="height: 70%;"></div>
+            </div>
+            <!-- Percentage label -->
+            <p>30%</p>
+        </div>
+        <div class="bar-container">
+            <div class="bar">
+                <div class="fill" style="--fill-height: 40%;"></div>
+                <div class="white-rect" style="height: 60%;"></div>
+            </div>
+            <p>40%</p>
+        </div>
+        <div class="bar-container">
+            <div class="bar">
+                <div class="fill" style="--fill-height: 80%;"></div>
+                <div class="white-rect" style="height: 20%;"></div>
+            </div>
+            <p>80%</p>
+        </div>
+    </div>
+    <!-- Title -->
+    <h1>Bar Plot</h1>
+</body>
+</html>
